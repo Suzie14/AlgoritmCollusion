@@ -64,3 +64,12 @@ def updateQ(Q,s,a, alpha):
             
     else : 
         return Q[t]
+
+
+#Cette fonction ne sert pas au final
+def env(A,pi):
+    env = np.zeros((len(A),len(A)))
+    for i in range (len(A)):
+        for j in range (len(A)):
+            env[i,j] = pi([A[i],A[j]])
+    return env  
